@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css"/>
+    <title>Namaste React</title>
+</head>
+<body>
+<div id="root">
+   <!-- <h1>hello world !</h1> -->
+</div>
+
+ <!-- In plain JavaScript, document.getElementById is used to directly access a DOM element by its id -->
+
+<!-- <script>
+    const heading = document.createElement("h1");
+    heading.innerHTML = "Hello world from JavaScript";
+    const root = document.getElementById("root");
+    root.appendChild(heading);
+</script> -->
+
+<script
+ crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+</script>
+<script
+ crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+</script>
+
+<!-- React: ReactDOM.createRoot
+React is a library for building user interfaces. It abstracts away direct DOM manipulation to manage the UI in a more declarative and efficient way. Instead of directly modifying the DOM, React uses a virtual DOM to determine the most efficient way to update the actual DOM. -->
+<script src="./App.js"></script>
+</body>
+</html>
