@@ -1,36 +1,36 @@
-//  React: ReactDOM.createRoot
-// React is a library for building user interfaces. It abstracts away direct DOM manipulation to manage the UI in a more declarative and efficient way. Instead of directly modifying the DOM, React uses a virtual DOM to determine the most efficient way to update the actual DOM.
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+// React.createElement => object => when we render it , it creates (HTML element)
+
+// const heading = React.createElement("h1",{id:parent},"This is react element");
+
+// console.log(heading); // object
+
+// JSX - HTML- like or XML-like syntax
+
+//JSX (transpiled before it reaches the Js) - PARCEL - Babel
+
+//JSX=> Babel transpiles it to React.createElement=>ReactElement-JS object-HTMLElement(render)
+
+// const jsxHeading=<h1 id="heading">Namaste react using JSX</h1>
+
+// console.log(jsxHeading); // object 
 
 
-/* <div id="parent">
-    <div id="child">
-        <h1>hello im h1 tag</h1>
-        <h2>Hello im h2 tag</h2>
-    </div>
-    <div id="child 2">
-        <h1>hello im h1 tag in child 2</h1>
-        <h2>Hello im h2 tag in child 2</h2>
-    </div>
-</div> 
- 
+// React component
 
-
-
-*/
-
-const parent=React.createElement("div",{id:"parent"},
-    [
-        React.createElement("div",{id:"child"},
-        [React.createElement("h1",{},"Hello im h1 tag"),React.createElement("h2",{},"Hello im h2 tag")]),
+const Title=()=>{
+   return ( <h1>Namaste react using JSx</h1>); 
+};
+// component inside component can also be called like , <Title></Title>, {Title()}
+const HeadingComponent=()=>{
+   return ( <div>
+    <Title/> 
     
-        React.createElement("div",{id:"child2"},
-            [React.createElement("h1",{},"Hello im h1 tag 2"),React.createElement("h2",{},"Hello im h2 tag 2")])
+        <h1 className="heading">Namaste react functional component</h1>
+    </div>);
+}
+const root=ReactDOM.createRoot(document.getElementById("root"));
 
-    ]
-);
-
-// the above code becomes very complicated , through this react is not making our lives easy it is making our lives much more diffiuclt, this is the core of react , so inorder to make our lives easy through react , we will be using JSX.
-
-// const heading=React.createElement("h1",{id:"heading"},"Hello world from react"); // console.log(heading),gives us an object
-    const root=ReactDOM.createRoot(document.getElementById("root"));
-    root.render(parent);
+root.render(<HeadingComponent/>);
